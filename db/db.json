@@ -1,7 +1,19 @@
-[
+{
+  "notes": [
     {
-        "title":"Test Title",
-        "text":"Test text", 
-        "id": "test_id"
+      "title": "Test Title",
+      "text": "Test text",
+      "id": "test_id"
+    },
+    {
+      "title": "Challenge 11",
+      "text": "do the assignment number 11",
+      "id": "1"
+    },
+    {
+      "title": "Challenge 10",
+      "text": "check grades",
+      "id": "2"
     }
-]
+  ]
+}
