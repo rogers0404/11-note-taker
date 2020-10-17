@@ -2,9 +2,9 @@
 
 const path = require('path');
 const router = require('express').Router();
-const { notes } = require("../db/db");
-const {addNote, validateNote} = require("../lib/notesFunctions");
-const shortid = require('shortid');                    //generate an unique ID - String
+let { notes } = require("../db/db");                     //see Issue #4 in git@github.com:rogers0404/11-note-taker.git
+const {addNote, validateNote, deleteById} = require("../lib/notesFunctions");
+const shortid = require('shortid');                      //generate an unique ID - String
  
 //uniqueString();
 
@@ -25,8 +25,17 @@ router.get('/notes', (req, res) => {
 /////////////////////////////////// API Routes ////////////////////////////////////////////////////
 
 router.get("/api/notes", (req, res) => {
-    //console.log(notes);
     res.json(notes);
+  });
+
+  router.delete("/api/notes/:id", (req, res) => {
+    const result = deleteById(req.params.id, notes);
+    if (result) {
+        notes = result;         //see Issue #4 in git@github.com:rogers0404/11-note-taker.git
+      res.json(result);
+    } else {
+      res.send(404);
+    }
   });
 
   router.post("/api/notes", (req, res) => {
