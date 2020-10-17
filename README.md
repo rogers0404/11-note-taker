@@ -2,9 +2,9 @@
 
 ## Description 
 
-An Great application that can be used to write and save notes.
+A Great application that can be used to write and save notes for daily life.
 
-!!more description about the application
+It works with Express.js, you can add, see and delete all notes you want to plan and schedule your daily life.
 
 Application developed using ES6 Syntax and Express.js. 
 
@@ -25,6 +25,7 @@ Application developed using ES6 Syntax and Express.js.
 
 * Deployed Application: 
     - [https://rogers0404.github.io/11-note-taker/](https://rogers0404.github.io/11-note-taker/)
+    - [https://app-notes-taker.herokuapp.com/](https://app-notes-taker.herokuapp.com/)
 
 * GitHub Repository:
     - [HTTPS: https://github.com/rogers0404/11-note-taker.git](https://github.com/rogers0404/11-note-taker.git)    
@@ -35,20 +36,37 @@ Application developed using ES6 Syntax and Express.js.
 
 You need some packages to run this application, 
 
-- `git clone url-repository        //clone the repository given above`
-- `npm i                           // or npm install to get all packages and dependencies of NPM`
-- `npm init                        // to get package.json`
-- `npm install inquirer            // check wether you have installed npm packages or just instal inquirer`
-- `npm install jest --save-dev     // install jest for test your code`
+- `git clone git@github.com:rogers0404/11-note-taker.git        //clone the repository`
+- `npm i                                   // or npm install to get all packages and dependencies of NPM`
+- `npm init                                // to get package.json`
+- `npm install express                     // check wether you have installed npm packages or just install express`
+- `npm install -g heroku                   // install git heroku for deployment and get the server functionality`
+- `heroku create app-notes-taker           // name of the app in heroku`
+- `npm install shortid                     // install shortid from npm package for generating unique ID`
+
 
 
 ## Usage 
 
+Defining Express in the application:
+
+`const express = require('express');`
+
 The starting command-line is:
 
-`node index.js `                  // to run the application
+`npm start                                 // to run the server`
 
-You need to follow to instructions. see Section [Screenshots](#screenshots)
+Examples of routes:
+
+`router.get('/', (req, res) => {`
+`  res.sendFile(path.join(__dirname, '../public/index.html'));`
+`});`
+
+`// API GET`
+`router.get("/api/notes", (req, res) => {`
+`    res.json(notes);`
+`  });`
+
 
 ## Contributing
 
@@ -63,10 +81,16 @@ Note Taker with Express.js is licensed under the
 
 None
 
+Express.js and shortid Dependency is licensed under the
+
+![v1](https://img.shields.io/static/v1?label=License&message=MIT&color=green&&style=plastic)
+
+MIT
+
+
 ## Test
 
-``npm run test`` //# press enter. Jest Test for all Classes
-
+None
 
 ## Questions
 
@@ -78,14 +102,23 @@ for more information you can have a question via email [rogers.ramirez2008@gmail
 ## Screenshots
 
 
-### Inicial Mock-up 
-
-![](./dist/assets/imges/mock-up.png)
 
 ### Screenshot 1
 
-![](./dist/assets/imges/image.png)
+![](./public/assets/images/image1.png)
 
 ### Screenshot 2
 
-![](./dist/assets/imges/image1.png)
+![](./public/assets/images/image2.png)
+
+### Screenshot 3
+
+![](./public/assets/images/image3.png)
+
+### Screenshot 4
+
+![](./public/assets/images/image4.png)
+
+### Screenshot 5
+
+![](./public/assets/images/image5.png)
