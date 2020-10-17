@@ -5,8 +5,6 @@ const router = require('express').Router();
 let { notes } = require("../db/db");                     //see Issue #4 in git@github.com:rogers0404/11-note-taker.git
 const {addNote, validateNote, deleteById} = require("../lib/notesFunctions");
 const shortid = require('shortid');                      //generate an unique ID - String
- 
-//uniqueString();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -24,10 +22,12 @@ router.get('/notes', (req, res) => {
 
 /////////////////////////////////// API Routes ////////////////////////////////////////////////////
 
+// API GET
 router.get("/api/notes", (req, res) => {
     res.json(notes);
   });
 
+  //API for Deletion
   router.delete("/api/notes/:id", (req, res) => {
     const result = deleteById(req.params.id, notes);
     if (result) {
@@ -38,6 +38,7 @@ router.get("/api/notes", (req, res) => {
     }
   });
 
+  //API for POST request
   router.post("/api/notes", (req, res) => {
     // set id based on npm package shortid
     req.body.id = shortid.generate();           //Getting an unique string ID from npm package
