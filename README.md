@@ -24,8 +24,8 @@ Application developed using ES6 Syntax and Express.js.
 ## URLs
 
 * Deployed Application: 
-    - [https://rogers0404.github.io/11-note-taker/](https://rogers0404.github.io/11-note-taker/)
-    - [https://app-notes-taker.herokuapp.com/](https://app-notes-taker.herokuapp.com/)
+    - [https://rogers0404.github.io/11-note-taker/](https://rogers0404.github.io/11-note-taker/)  Static
+    - [https://app-notes-taker.herokuapp.com/](https://app-notes-taker.herokuapp.com/)            Live
 
 * GitHub Repository:
     - [HTTPS: https://github.com/rogers0404/11-note-taker.git](https://github.com/rogers0404/11-note-taker.git)    
