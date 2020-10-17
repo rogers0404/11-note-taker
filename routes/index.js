@@ -4,6 +4,9 @@ const path = require('path');
 const router = require('express').Router();
 const { notes } = require("../db/db");
 const {addNote, validateNote} = require("../lib/notesFunctions")
+//const uniqueString = require('unique-string');      //generate an unique ID - String
+ 
+uniqueString();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -29,6 +32,7 @@ router.get("/api/notes", (req, res) => {
   router.post("/api/notes", (req, res) => {
     // set id based on what the next index of the array will be
     req.body.id = notes.length.toString();
+    //console.log(uniqueString());
   
     // if any data in req.body is incorrect, send 400 error back
     if (!validateNote(req.body)) {
